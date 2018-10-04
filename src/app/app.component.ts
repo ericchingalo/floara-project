@@ -9,7 +9,13 @@ export class AppComponent {
 
   public options: Object = {
     placeholderText: 'Edit Your Content Here!',
-    charCounterCount: true
+    charCounterCount: true,
+    //immediateAngularModelUpdate : true,
+    events : {
+      'froalaEditor.focus' : function(e, editor) {
+        console.log(editor.selection.get());
+      }
+    }
   }
 
   title = 'floara-project';
