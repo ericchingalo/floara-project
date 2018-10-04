@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public editorContents: string = 'Hello World';
 
   public options: Object = {
     placeholderText: 'Edit Your Content Here!',
@@ -13,10 +14,8 @@ export class AppComponent {
     //immediateAngularModelUpdate : true,
     events : {
       'froalaEditor.focus' : function(e, editor) {
-        console.log(editor.selection.get());
+        console.log('Contents:',this.editorContents);
       }
     }
   }
-
-  title = 'floara-project';
 }
